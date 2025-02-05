@@ -1,0 +1,27 @@
+{% load static %}
+
+<link rel="stylesheet" href="{% static 'MiniatureGallery/header_style.css' %}">
+
+<!doctype html>
+<html>
+	<body>
+		<header>
+
+			<!-- NAVIGATION BUTTONS -->
+			<div id='nav-container'>
+				<ul id='nav-list'>
+					<a href={% url 'MiniatureGallery:batchindex' %}><li>Miniatures</li></a>
+					<a href={% url 'MiniatureGallery:storageindex' %}><li>Storage</li></a>
+					<a href={% url 'admin:index' %}><li>Admin</li></a>
+				</ul>
+			</div>
+
+            <!-- SEARCHBAR -->
+			<form action="{% url 'MiniatureGallery:batchindex' %}" method="get" id='search-container'>
+				<input type="text" name="search" id="search-bar" placeholder="i.e. infantry space marine painting">
+				<input type="submit" Value=">" id="confirm-button" >
+			</form>
+
+		</header>
+	</body>
+</html>

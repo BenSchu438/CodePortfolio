@@ -1,0 +1,58 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'MiniatureGallery/style.css' %}">
+<link rel="stylesheet" href="{% static 'MiniatureGallery/storage_detail_style.css' %}">
+
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Miniature Gallery | {{ storage.id }}</title>
+	</head>
+	<body>
+		
+		{% include './header.html' %}
+
+		
+		<section class='content-body'>
+			<!-- STORAGE DETAILS -->
+			<div id='storage-detail-container'>
+				<div id='title'> Container: {{ storage.id }} </div>
+
+				<table id="details-table">
+					<tr>
+						<td>Capacity:</td>
+						<td>{{ storage.get_capacity_string }}</td>
+					</tr>
+					<tr>
+						<td>Location:</td>
+						<td>{{ storage.location }}</td>
+					</tr>
+					<tr>
+						<td>Last Moved:</td>
+						<td>{{ storage.last_moved }}</td>
+					</tr>
+					<tr>
+						<td>Point Value:</td>
+						<td>{{storage.get_stored_points}}</td>
+					</tr>
+				</table>
+			</div>
+		</section>    
+
+        <!-- GALLERY GRID -->
+		<section class='content-body'>
+			<div id='subtitle'> Contents: </div>
+			{% include "./batchgallery.html" %}
+
+
+			<!-- EDIT BUTTON -->
+			<form action={% url 'admin:MiniatureGallery_storage_change' storage.id %}> 
+				<input type="submit" value="📝" class='edit-button-container'/>
+			</form>
+		</section> 
+		
+		
+		
+		
+	</body>
+</html>

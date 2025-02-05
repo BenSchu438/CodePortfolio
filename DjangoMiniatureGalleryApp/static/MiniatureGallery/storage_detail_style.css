@@ -1,0 +1,36 @@
+
+/* DETAILS LAYOUT */
+
+#storage-detail-container {
+    box-sizing: border-box;
+
+    margin: 0 12%;
+    padding: 10px 3px;
+    width: calc(100% - 160px);
+}
+
+#title {
+    text-align: left;
+    border-bottom: 8px solid rgb(37, 37, 37);
+    min-height: 30px;
+    display: block;
+    box-sizing: border-box;
+
+    width: auto;
+    font-size: 45px;
+    font-style: italic;
+}
+
+#subtitle {
+    text-align: left;
+    min-height: 30px;
+    display: block;
+    box-sizing: border-box;
+    
+    margin: 0 12%;
+    padding-top: 10px;
+    width: auto;
+    font-size: 35px;
+    font-style: italic;
+}
+

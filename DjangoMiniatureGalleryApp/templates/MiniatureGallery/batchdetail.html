@@ -1,0 +1,100 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'MiniatureGallery/style.css' %}">
+<link rel="stylesheet" href="{% static 'MiniatureGallery/batch_detail_style.css' %}">
+
+<!-- DEPRECIATED - The new version of this doc is 'batchdetailv2' -->
+
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Bens Miniature Gallery</title>
+    </head>
+
+    <body>
+        <div class="content-body">
+
+            <div class="row" id="group-box">
+
+                <section id="left-partition">
+                    {% if batch.get_images %}
+                        <a href="{{batch.get_images.0.img_path.url}}"
+                            target="_blank">
+                        <img id="primary-image"
+                            src="{{batch.get_images.0.img_path.url}}"
+                            alt="Image of {{batch}}"/>
+                        </a>
+                    {% else %}
+                        <img id="primary-image"
+                            src="http://127.0.0.1:8000/media/uploads/fallback.jpg"
+                            alt="Ben is cringe for not uploading an image here yet"/>
+                    {% endif %}
+                </section>
+
+                <section id="right-partition">
+                    <div id='title'> {{ batch }} </div>
+                    <table id="details-table">
+                        <tr>
+                            <td>Type:</td>
+                            <td>{{ batch.unit_id.category }} {{batch.unit_id.utype}}</td>
+                        </tr>
+                        <tr>
+                            <td>Model Count:</td>
+                            <td>{{ batch.count }}</td>
+                        </tr>
+                        <tr>
+                            <td>Source:</td>
+                            <td>{{ batch.kit_id }}</td>
+                       </tr>
+                        <tr>
+                            <td>Stage:</td>
+                            <td>{{ batch.stage }}</td>
+                        </tr>
+                        {% if batch.get_points > 0 %}
+                        <tr>
+                            <td>Points:</td>
+                            <td>{{batch.get_points}}</td>
+                        </tr>
+                        {% endif %} 
+                        <tr>
+                            <td>Last Edited:</td>
+                            <td>{{ batch.edit_date }}</td>
+                        </tr>
+                        <tr>
+                            <td>Location:</td>
+                            <td><a href="{% url 'MiniatureGallery:storagedetail' batch.storage_id %}"> 
+                                {{ batch.storage_id }} => {{ batch.storage_id.location }} </a></td>
+                        </tr>
+                        <tr>
+                            <td>Tags:</td>
+                            <td>
+                            {% if batch.tagassignment_set.all.count > 0 %}
+                                {% for tag in batch.tagassignment_set.all %}
+                                    {{tag.tag_id.name}} 
+                                        {% if not forloop.last %}
+                                            , 
+                                        {% endif %}
+                                {% endfor %}
+                            {% endif %}
+                            </td>
+                        </tr>
+                    </table>
+
+                    {% if batch.note != '' %}
+                        Extra Notes:<br>
+                        {{ batch.note }}
+                    {% endif %}
+
+                </section>
+                
+            </div>
+
+            <div> 
+                <a href="{% url 'batchadmin' batch.id %}">
+                Edit (Admin)
+                </a>
+            </div>
+
+        </div>
+    </body>
+</html>

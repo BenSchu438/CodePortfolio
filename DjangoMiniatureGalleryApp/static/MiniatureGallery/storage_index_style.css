@@ -1,0 +1,46 @@
+
+/* STORAGE INDEX TABLE */
+
+#storage-table {
+    border-collapse: collapse;
+    overflow-y: auto;
+
+    max-height: 800px;
+
+    margin: 0 80px;
+    padding: 50px 0px;
+    width: calc(100% - 160px);
+
+    background-color: #1b4e39;
+}
+
+#storage-table th {
+    font-size: 25px;
+    text-align: left;
+    padding: 5px;
+
+    background-color: rgb(58, 149, 116);
+    border: rgb(255, 255, 255) solid 3px;
+    
+}
+#storage-table tr {
+    box-sizing: border-box;
+    height: 40px;
+}
+#storage-table tr:nth-child(even) {
+    background-color: #11332c;
+}
+#storage-table tr:hover {
+    background-color: rgba(49, 137, 175, 0.377);
+    border: rgba(255, 255, 255, 0.89) solid 2px;
+}
+
+#storage-table td {
+    box-sizing: border-box;
+    font-size: 20px;
+    padding: 0 10px;
+    border-right: rgba(255, 255, 255, 0.519) dotted 1px;
+}
+#storage-table td:last-child {
+    border-right: 0px;
+}

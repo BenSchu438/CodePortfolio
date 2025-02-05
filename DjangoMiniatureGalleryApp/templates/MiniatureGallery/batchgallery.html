@@ -1,0 +1,48 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'MiniatureGallery/batch_gallery_style.css' %}">
+
+
+<section class="batch-index-container">
+
+	{% if search_list %}
+	<!-- SEARCH KEYWORDS -->
+	<dir>
+		Showing results for: 
+		{% for tag in search_list %}
+			{{tag}} 
+		{% endfor %}
+	</dir>
+	{% endif %}
+
+	{% if batch_list %}
+		
+		{% if results_points and results_points > 0 %}
+			<!-- POINTS -->
+			 <br>
+			<div>Total Points in Results: {{results_points}}</div>
+		{% endif %}
+
+		<!-- GALLERY GRID ITEM -->
+		<ul>
+	    {% for batch in batch_list %}
+			<li class="batch-index-gallery">
+				<a href="{% url 'MiniatureGallery:batchdetail' batch.id %}">
+				{% if batch.get_thumbnail_url %}
+					<img class= "batch-index-thumbnail" src="{{batch.get_thumbnail_url}}"/>
+				{% else %}
+					<img class= "batch-index-thumbnail" src="http://127.0.0.1:8000/media/uploads/fallback.jpg"/>
+				{% endif %}
+				
+				{{ batch }}
+				<br>
+				[{{ batch.kit_id }}]
+				</a>
+			</li>
+		{% endfor %}
+		</ul>
+
+	{% else %}
+		<!-- NO RESULTS -->
+		<p>No batches are available.</p>
+	{% endif %}
+</section>    

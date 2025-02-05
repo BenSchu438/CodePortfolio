@@ -1,0 +1,30 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'MiniatureGallery/style.css' %}">
+
+
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Miniature Gallery</title>
+	</head>
+
+	{% include "./header.html" %}
+
+	<body>
+        <!-- PAGE SUBHEADER -->
+		<div class='content-header'><h1> Miniatures </h1></div>
+		
+        <!-- GALLERY GRID -->
+		<section class='content-body'>
+			{% include './batchgallery.html' %}
+
+			<!-- EDIT BUTTON -->
+			<form action={% url 'admin:MiniatureGallery_batch_changelist' %}> 
+				<input type="submit" value="📝" class='edit-button-container'/>
+			</form>
+		</section>
+
+        
+	</body>
+</html>

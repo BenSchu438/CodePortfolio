@@ -1,0 +1,128 @@
+
+/* BASE HEADER */
+
+header {
+    box-sizing: border-box;
+    display: flex;
+
+    height: 55px;
+    min-width: 900px;
+    width: 100%;
+
+    margin: 0 0;
+    padding: 5px 25px;
+
+    background-color: #1e6546;
+    align-content:end;
+}
+
+
+/* NAVIGATION BUTTONS */
+
+#nav-container {
+    box-sizing: border-box;
+    display: flex;
+    flex-shrink: 1;
+    flex-grow: 1;
+    
+    height: 45px;
+    max-width: 450px;
+    min-width: 300px;
+    padding: 0;
+    margin: 0;
+}
+#nav-list {
+    box-sizing: border-box;
+    list-style-type: none;
+    
+    display: flex;
+    
+    margin: 0 0;
+    padding: 0 0;
+}
+
+#nav-list li {
+    display: inline-block;
+    box-sizing: border-box;
+
+    height: 100%;
+    max-width: 150px;
+    min-width: 50px;
+    width: 150px;
+    
+    text-align: center;
+    line-height: 45px;
+    font-size: 25px;
+
+    background-color: #112833;
+}
+#nav-list li:hover {
+    background-color: #2a5f37;
+    border: 3px solid rgb(194, 255, 206);
+}
+
+
+/* SEARCHBAR */
+
+#search-container {
+    box-sizing: border-box;
+    display:flex;
+    flex-direction: row;
+    justify-content: flex-end;
+
+    border:5px gray;
+    height: 45px;
+
+    margin-left: auto;
+
+    width: 100%;
+    max-width: 400px;
+    min-width: 300px;
+
+}
+
+#search-bar {
+    flex-grow: 2;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 3px;
+
+    font-family:'Times New Roman', Times, serif;
+    font-size: 18px;
+    resize: none;
+}
+#search-bar:focus {
+    outline:none;
+}
+#search-bar:focus-within {
+    outline: 5px solid rgb(6, 101, 6);
+}
+#search-bar::placeholder {
+    opacity: .5;
+    color: rgb(0, 0, 0);
+}
+
+#confirm-button {
+    box-sizing: border-box;
+    float: right;
+    flex-shrink: 0;
+    cursor: pointer;
+
+    height: 45px;
+    width: 45px;
+
+    font-size: 30px;
+    line-height: 40px;
+    font-weight: bold;
+    color: rgb(136, 255, 134);
+
+    border-radius: 50%;
+    border: none;
+    background-color: #1b4e39;
+}
+#confirm-button:hover {
+    background-color: #5bff77;
+    border: solid 3px;
+    border-color: #194f1e;
+    color: #194f1e;
+}

@@ -1,0 +1,59 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'MiniatureGallery/style.css' %}">
+<link rel="stylesheet" href="{% static 'MiniatureGallery/storage_index_style.css' %}">
+
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Miniature Gallery | Storage Index</title>
+    </head>
+    <body>
+
+        {% include './header.html' %}
+        
+        <div class='content-header'><h1> Storage Containers </h1></div>
+
+        <section class='content-body'>
+            <!-- STORAGE TABLE -->
+            <br>
+            {% if top_storage_list %}
+                <table id='storage-table'>
+                    <tr>
+                        <th>Container Tag</th>
+                        <th>Current Capacity</th>
+                        <th>Location</th>
+                        <th>Last Moved</th>
+                    </tr>
+                    {% for storage in top_storage_list %}
+                        <tr>
+                            <td>
+                                <a href="{% url 'MiniatureGallery:storagedetail' storage.id %}">
+                                    {{ storage.id }}
+                                </a>
+                            </td>
+                            <td>
+                                {{ storage.get_capacity_string }}
+                            </td>
+                            <td>
+                                {{ storage.location }}
+                            </td>
+                            <td>
+                                {{ storage.last_moved }}
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </table>
+            {% else %}
+                No storage options are available.
+            {% endif %}
+            <br>
+
+            <!-- EDIT BUTTON -->
+            <form action={% url 'admin:MiniatureGallery_storage_changelist' %}> 
+                <input type="submit" value="📝" class='edit-button-container'/>
+            </form>
+
+        </section>
+    </body>
+</html>

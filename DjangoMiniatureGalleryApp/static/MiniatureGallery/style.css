@@ -1,0 +1,122 @@
+
+/* HEADERS */
+
+h1 {
+    font-size: 35px;
+}
+h2 {
+    font-size: 20px;
+}
+
+
+/* LINKS */
+
+a {
+    text-decoration: underline;
+}
+a:link , a:visited {
+    color:rgb(43, 189, 40);
+}
+a:hover {
+    color:rgb(172, 181, 221);
+}
+a:active {
+    color:rgb(0, 67, 4);
+}
+
+
+/* GENERAL FORMATTING */
+
+body {
+    color: white;
+    font-size: 18px;
+    background-color: #0e2e29;
+    margin: 0 0;
+}
+.content-header {
+    box-sizing: border-box;
+    padding: 1px 40px;
+    margin: 20px auto;
+
+    max-width: 1300px;
+    height: 60px;
+
+    line-height: 10px;
+    text-align: center;
+
+    background-color: #1d5354;
+}
+.content-body {
+    box-sizing: border-box;
+    padding: 0 20px;
+    margin: 20px auto;
+    
+    max-width: 1300px;
+    max-height: 1200px;
+
+    background-color: #1d5354;
+}
+
+
+/* ALIGNMENTs */
+
+.left-aligned-content {
+    float: left;
+    width: 100%;
+}
+.right-aligned-content {
+    float: right;
+}
+
+
+/* DETAILS TABLE */
+
+#details-table {
+    font-size: 20px;
+    width: 100%;
+    border-collapse: collapse;
+    margin-left: 25px;
+}
+#details-table td, details-table th {
+    padding: 6px 0;
+}
+#details-table tr:hover {
+    background-color: rgba(34, 71, 34, 0.818);
+}
+#details-table hr:first {
+    width: 25%;
+}
+
+
+/* EDIT BUTTON */
+
+.edit-button-container {
+    display: inline-block;
+    box-sizing: border-box;
+    float:right;
+
+    width: 50px;
+    height: 50px;
+    right: 10px;
+    bottom: 10px;
+    position: sticky;
+
+    border: #28937a 0px solid;
+    border-radius: 45%;
+
+    text-align:start;
+    font-size: 30px;
+    text-decoration: none;
+
+    background-color: #11283300;
+}
+.edit-button-container:hover {
+    width: 60px;
+    height: 60px;
+
+    font-size: 35px;
+
+    border: #21cb65 6px solid;
+    
+    background-color: #0f3e1c;
+}
