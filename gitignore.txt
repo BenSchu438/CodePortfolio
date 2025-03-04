@@ -1,6 +1,0 @@
-# MiniatureGallery GitIgnore
-**/migrations/
-**/__pycache__/
-settings.py
-*.pyc
-
