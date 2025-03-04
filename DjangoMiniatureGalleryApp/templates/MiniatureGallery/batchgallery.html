@@ -6,21 +6,45 @@
 
 	{% if search_list %}
 	<!-- SEARCH KEYWORDS -->
-	<dir>
+	<div style="padding-top:5px;">
 		Showing results for: 
 		{% for tag in search_list %}
 			{{tag}} 
 		{% endfor %}
-	</dir>
+	</div>
 	{% endif %}
 
 	{% if batch_list %}
+
+		<!-- FUN FACTS -->
+		<div class="stats-table">
+			<ul class = "stats-list">
+				<!-- Batches -->
+				<li class="stats-container">
+					Batches: <br>
+					{% if batch_count != total_batch_count %}
+						{{batch_count}} of {{total_batch_count}} [{{batch_ratio}}]
+					{% else %}
+						{{total_batch_count}} total
+					{% endif %}
+				</li>
+				<!-- Models -->
+				<li class="stats-container">
+					Models: <br>
+					{% if model_count != total_model_count %}
+						{{model_count}} of {{total_model_count}} [{{model_ratio}}]
+					{% else %}
+						{{total_model_count}} total
+					{% endif %}
+				</li>
+				<!-- Points -->
+				<li class="stats-container">
+					Points: <br>
+					{{results_points}}
+				</li>
+			</ul>
+		</div>
 		
-		{% if results_points and results_points > 0 %}
-			<!-- POINTS -->
-			 <br>
-			<div>Total Points in Results: {{results_points}}</div>
-		{% endif %}
 
 		<!-- GALLERY GRID ITEM -->
 		<ul>
@@ -30,7 +54,7 @@
 				{% if batch.get_thumbnail_url %}
 					<img class= "batch-index-thumbnail" src="{{batch.get_thumbnail_url}}"/>
 				{% else %}
-					<img class= "batch-index-thumbnail" src="http://127.0.0.1:8000/media/uploads/fallback.jpg"/>
+					<img class= "batch-index-thumbnail" src="{% static 'MiniatureGallery/images/fallback.jpg' %}"/>
 				{% endif %}
 				
 				{{ batch }}

@@ -18,7 +18,7 @@
 
             <!-- SEARCHBAR -->
 			<form action="{% url 'MiniatureGallery:batchindex' %}" method="get" id='search-container'>
-				<input type="text" name="search" id="search-bar" placeholder="i.e. infantry space marine painting">
+				<input type="text" name="search" id="search-bar" placeholder="i.e. infantry space marine painting" maxlength="128">
 				<input type="submit" Value=">" id="confirm-button" >
 			</form>
 

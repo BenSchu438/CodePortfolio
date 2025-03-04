@@ -7,7 +7,37 @@
 
     max-height: 800px;
     overflow-y: auto;
+}
+
+/* STATS DATA */
+
+.stats-table {
+    display: grid;
+    justify-items: center;
+
+    margin: 5 0;
+    padding: 0 0;
+    width: 80%;
+    height: 50px;
+}
+.stats-list {
+    display: inline-block;
+    margin: 3 0;
+    padding: 0 0;
+    width: 100%;
+    height: 100%;
+}
+.stats-container {
+    box-sizing: border-box;
+    display: inline-block;
+    margin: 0 0;
+    padding: 0 0;
+
+    width: 32%;
+    height: 100%;
     
+    text-align: center;
+    vertical-align: top;
 }
 
 
