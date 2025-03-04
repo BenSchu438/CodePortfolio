@@ -1,8 +1,9 @@
 # MiniatureGallery GitIgnore
-**/migrations/*
-**/__pycache__/*
-settings.py
-*.pyc
+DjangoMiniatureGalleryApp/migrations/
 DjangoMiniatureGalleryApp/static/tests/*.jpg
 DjangoMiniatureGalleryApp/static/tests/*.png
+**/__pycache__/
+settings.py
+*.pyc
+
 
